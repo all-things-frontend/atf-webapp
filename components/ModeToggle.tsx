@@ -1,8 +1,7 @@
 "use client";
 
-import * as React from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -14,6 +13,13 @@ import { MoonIcon, SunIcon } from "./icons";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
+  const [prefersDarkTheme, setPrefersDarkTheme] = useState(false);
+
+  useEffect(() => {
+    const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+    setPrefersDarkTheme(darkThemeMq.matches);
+    setTheme(darkThemeMq.matches ? "dark" : "light");
+  }, [setTheme]);
 
   return (
     <DropdownMenu>
@@ -31,7 +37,9 @@ export function ModeToggle() {
         <DropdownMenuItem onClick={() => setTheme("dark")}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem
+          onClick={() => setTheme(prefersDarkTheme ? "dark" : "light")}
+        >
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
