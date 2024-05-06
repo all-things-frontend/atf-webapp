@@ -1,31 +1,55 @@
 "use client";
+
 import {
   SandpackProvider,
   SandpackLayout,
   SandpackCodeEditor,
   SandpackPreview,
   SandpackFileExplorer,
+  SandpackThemeProp,
+  SandpackPredefinedTheme,
 } from "@codesandbox/sandpack-react";
+import { useTheme } from "next-themes";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable";
 
 export default function CodeEditor() {
+  const { theme } = useTheme();
+  const myTheme: SandpackThemeProp = theme as SandpackPredefinedTheme;
+
+  const styles = { height: "calc(100vh - 100px)" };
+
   return (
-    <div className="p-10">
-      <SandpackProvider template="react" theme={"dark"}>
+    <div>
+      <SandpackProvider template="react" theme={myTheme}>
         <SandpackLayout>
-          <SandpackFileExplorer className="!h-[500px]" />
-          <SandpackCodeEditor
-            showLineNumbers
-            showInlineErrors
-            wrapContent
-            showTabs
-            closableTabs
-            className="!h-[500px]"
-          />
-          <SandpackPreview
-            showNavigator
-            showOpenInCodeSandbox={false}
-            className="!h-[500px]"
-          />
+          <ResizablePanelGroup direction="horizontal" className="w-xl">
+            <ResizablePanel defaultSize={20}>
+              <SandpackFileExplorer style={styles} />
+            </ResizablePanel>
+            <ResizableHandle withHandle />
+            <ResizablePanel defaultSize={40}>
+              <SandpackCodeEditor
+                showLineNumbers
+                showInlineErrors
+                wrapContent
+                showTabs
+                closableTabs
+                style={styles}
+              />
+            </ResizablePanel>
+            <ResizableHandle withHandle />
+            <ResizablePanel defaultSize={40}>
+              <SandpackPreview
+                showNavigator
+                showOpenInCodeSandbox={false}
+                style={styles}
+              />
+            </ResizablePanel>
+          </ResizablePanelGroup>
         </SandpackLayout>
       </SandpackProvider>
     </div>
