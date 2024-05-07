@@ -1,18 +1,19 @@
-"use client";
+'use client';
 
+import { counterSolution } from '@/mock-data';
 import {
   SandpackCodeEditor,
   SandpackCodeViewer,
   SandpackPredefinedTheme,
   SandpackProvider,
   SandpackThemeProp,
-} from "@codesandbox/sandpack-react";
-import { useTheme } from "next-themes";
-import React, { useState } from "react";
+} from '@codesandbox/sandpack-react';
+import { useTheme } from 'next-themes';
+import React, { useState } from 'react';
 
 type QuestionPropsType = {};
 
-const tabs = ["Question", "Solution"];
+const tabs = ['Question', 'Solution'];
 
 export const Question: React.FC<QuestionPropsType> = () => {
   const [isQuestionTabActive, setIsQuestionTabActive] = useState(true);
@@ -27,20 +28,20 @@ export const Question: React.FC<QuestionPropsType> = () => {
           <button
             key={tab}
             onClick={() => {
-              if (tab === "Question") {
+              if (tab === 'Question') {
                 setIsQuestionTabActive(true);
               }
-              if (tab === "Solution") {
+              if (tab === 'Solution') {
                 setIsQuestionTabActive(false);
               }
             }}
             className={`${
-              tab === "Question" && isQuestionTabActive ? "underline" : ""
+              tab === 'Question' && isQuestionTabActive ? 'underline' : ''
             } ${
-              tab === "Solution" && !isQuestionTabActive ? "underline" : ""
+              tab === 'Solution' && !isQuestionTabActive ? 'underline' : ''
             } `}
           >
-            {" "}
+            {' '}
             {tab}
           </button>
         ))}
@@ -64,13 +65,13 @@ export const Question: React.FC<QuestionPropsType> = () => {
           <SandpackProvider
             template="react"
             theme={myTheme}
-            style={{ fontSize: "12px" }}
+            style={{ fontSize: '12px' }}
           >
             <SandpackCodeViewer
               showLineNumbers
               wrapContent
               showTabs
-              code={solutionCode}
+              code={counterSolution}
             />
           </SandpackProvider>
         </div>
@@ -78,18 +79,3 @@ export const Question: React.FC<QuestionPropsType> = () => {
     </div>
   );
 };
-
-const solutionCode = `import { useState } from 'react';
-import './styles.css';
-export default function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div>
-      <button onClick={() => setCount(count + 1)}>
-        Clicks: {count}
-      </button>
-    </div>
-  );
-}
-`;
