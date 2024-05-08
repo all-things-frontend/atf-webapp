@@ -15,7 +15,7 @@ import { useMemo, useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { isAlphanumeric } from "@/utils/helpers";
 
-export function SheetDemo() {
+export function FeedbackDrawer() {
   const [feedbackText, setFeedbackText] = useState("");
 
   const isValidFeedbackText = useMemo(
