@@ -13,7 +13,7 @@ const config = {
   theme: {
     colors: {
       ...colors,
-      primary: '#F2613F',
+      primary: '#A3FFD6',
     },
     container: {
       center: true,
@@ -32,10 +32,20 @@ const config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        typing: {
+          from: { width: '0%' },
+          to: { width: '100%' },
+        },
+        blinkCaret: {
+          from: { borderRightColor: 'transparent' },
+          to: { borderRightColor: 'transparent' },
+          '50%': { borderRightColor: '#A3FFD6' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        typingAnimate: `typing 3s steps(30, end), blinkCaret 1s step-end infinite`,
       },
     },
   },
