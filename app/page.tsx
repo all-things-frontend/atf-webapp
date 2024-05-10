@@ -2,7 +2,6 @@ import { Header } from '@/components/Header';
 import { PAGE_ROUTES } from './contants';
 import Link from 'next/link';
 
-
 export default function Home() {
   return (
     <div>
