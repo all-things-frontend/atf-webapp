@@ -16,9 +16,9 @@ export default function App() {
 export const MOCK_QUESTIONS = [
   {
     id: 1,
-    name: 'Counter',
-    description: 'Increment and decrement counter',
-    difficulty: 'Easy',
+    name: "Counter",
+    description: "Increment and decrement counter",
+    difficulty: "Easy",
     estimatedTime: 10, // in mins
     solution: {
       code: counterSolution,
@@ -28,9 +28,9 @@ export const MOCK_QUESTIONS = [
 
   {
     id: 2,
-    name: 'Counter',
-    description: 'Increment and decrement counter',
-    difficulty: 'Easy',
+    name: "Counter",
+    description: "Increment and decrement counter",
+    difficulty: "Easy",
     estimatedTime: 10, // in mins
     solution: {
       code: counterSolution,
@@ -40,9 +40,9 @@ export const MOCK_QUESTIONS = [
 
   {
     id: 3,
-    name: 'Counter',
-    description: 'Increment and decrement counter',
-    difficulty: 'Easy',
+    name: "Counter",
+    description: "Increment and decrement counter",
+    difficulty: "Easy",
     estimatedTime: 10, // in mins
     solution: {
       code: counterSolution,
@@ -52,9 +52,9 @@ export const MOCK_QUESTIONS = [
 
   {
     id: 4,
-    name: 'Counter',
-    description: 'Increment and decrement counter',
-    difficulty: 'Easy',
+    name: "Counter",
+    description: "Increment and decrement counter",
+    difficulty: "Easy",
     estimatedTime: 10, // in mins
     solution: {
       code: counterSolution,
@@ -62,3 +62,5 @@ export const MOCK_QUESTIONS = [
     },
   },
 ];
+
+export const LOGGED_IN_USER_COMPLETED_QUESTIONS_ID = [1, 4];
