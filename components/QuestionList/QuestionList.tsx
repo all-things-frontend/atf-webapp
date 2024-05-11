@@ -15,6 +15,7 @@ type QuestionListItemProps = {
   name: string;
   description: string;
   difficulty: string;
+  slug: string;
 };
 
 const QuestionListItem: FC<QuestionListItemProps> = ({
@@ -22,18 +23,17 @@ const QuestionListItem: FC<QuestionListItemProps> = ({
   name,
   description,
   difficulty,
+  slug,
 }) => {
   const router = useRouter();
 
   const [isHover, setIsHover] = useState(false);
 
-  console.log({ isHover });
-
   return (
     <div
       className="p-4 flex justify-between items-center hover:bg-black/20 cursor-pointer"
       onClick={() => {
-        router.push("/question");
+        router.push(`/question/${slug}`);
       }}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
@@ -65,13 +65,14 @@ const QuestionList: FC<QuestionListProps> = ({}) => {
   return (
     <div>
       <div className="flex flex-col border border-gray-200 dark:border-gray-800 rounded-lg divide-y divide-gray-200 dark:divide-gray-800">
-        {MOCK_QUESTIONS.map(({ id, name, description, difficulty }) => (
+        {MOCK_QUESTIONS.map(({ id, name, description, difficulty, slug }) => (
           <QuestionListItem
             key={id}
             id={id}
             name={name}
             description={description}
             difficulty={difficulty}
+            slug={slug}
           />
         ))}
       </div>
