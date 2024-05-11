@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 type SentencePropType = { sentence: string };
 
@@ -10,12 +10,15 @@ export const TextReveal: React.FC<SentencePropType> = ({ sentence }) => {
   const { scrollY } = useScroll();
 
   const [scrollVal, setScrollVal] = useState(0);
+  const [totalHeight, setTotalHeight] = useState(0);
+
+  useEffect(() => {
+    setTotalHeight(document.body.offsetHeight - window.innerHeight);
+  }, []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrollVal(latest);
   });
-
-  const totalHeight = document.body.offsetHeight - window.innerHeight;
 
   const wordLengthWithOpacity = useMemo(
     () => Math.floor(words.length * (scrollVal / totalHeight)),
