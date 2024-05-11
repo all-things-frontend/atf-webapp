@@ -1,7 +1,8 @@
-import { Header } from '@/components/Header';
-import { PAGE_ROUTES } from './contants';
-import Link from 'next/link';
-
+import { Header } from "@/components/Header";
+import { PAGE_ROUTES } from "./contants";
+import Link from "next/link";
+import { TextReveal } from "@/components/TextReveal";
+import { TEXT_REVEAL_SENTENCE } from "@/mock-data";
 
 export default function Home() {
   return (
@@ -18,6 +19,9 @@ export default function Home() {
             Get Started
           </button>
         </Link>
+      </section>
+      <section className="p-96" id="text-reveal">
+        <TextReveal sentence={TEXT_REVEAL_SENTENCE} />
       </section>
     </div>
   );
