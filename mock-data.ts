@@ -64,3 +64,13 @@ export const MOCK_QUESTIONS = [
 ];
 
 export const LOGGED_IN_USER_COMPLETED_QUESTIONS_ID = [1, 4];
+
+export const USER_BADGE = `https://github.com/shadcn.png`;
+
+export const TEXT_REVEAL_SENTENCE = `Step out of tutorial hell and do it the CHAD way by diving into the world of reactChad.com where learning meets practice. Code with hints, seek solutions, and sharpen skills with tailored real-world interview questions. Level up your React game with reactChad.  LFG 🚀`;
+
+export const MEME_ARRAY = [
+  `https://i.imgflip.com/4n3nd3.png?a476472`,
+  `https://ih1.redbubble.net/image.5501728010.1931/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.webp`,
+  `https://i.imgflip.com/3xgbov.png`,
+];
