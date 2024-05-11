@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/sheet";
 import { useMemo, useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
-import { isAlphanumeric } from "@/utils/helpers";
+import { isAlphanumeric } from "@/app/utils/helpers";
 
 export function FeedbackDrawer() {
   const [feedbackText, setFeedbackText] = useState("");
