@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -10,15 +9,29 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { MOCK_QUESTIONS } from "@/mock-data";
-import Link from "next/link";
 import { EnterIcon } from "./icons";
+import { useParams } from "next/navigation";
+import { useCallback } from "react";
+import { QuestionType } from "@/app/types";
+import { useRouter } from "next/navigation";
 
 export function QuestionLeftDrawer() {
+  const { question_slug } = useParams();
+  const router = useRouter();
+
+  const handleItemClick = useCallback(
+    (question: QuestionType) => {
+      const updatedSlug = question.slug;
+      router.replace(updatedSlug);
+    },
+    [router]
+  );
+
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <button className="flex gap-2 items-center p-2 group hover:bg-gray-800/50 rounded-md mt-2 ml-2">
-          <div className="text-xs">All questions</div>
+        <button className="flex gap-2 items-center p-2 group hover:bg-gray-800/50 rounded-md">
+          <div>All questions</div>
           <div className="opacity-0 group-hover:opacity-100">
             <EnterIcon />
           </div>
@@ -34,12 +47,13 @@ export function QuestionLeftDrawer() {
           </SheetHeader>
           <SheetDescription className="text-sm flex flex-col gap-2">
             {MOCK_QUESTIONS.map((question, index) => (
-              <Link
-                href={`/question/${question.slug}`}
+              <button
                 key={question.id}
-                className={`flex justify-between items-center p-3 rounded-lg ${
+                className={`flex justify-between items-center p-3 rounded-lg disabled:cursor-not-allowed ${
                   index % 2 === 0 && "bg-gray-700/50"
                 } hover:bg-gray-900/50`}
+                disabled={question.slug === question_slug}
+                onClick={() => handleItemClick(question)}
               >
                 <div className="flex gap-4">
                   <div>{question.id}</div>
@@ -48,7 +62,7 @@ export function QuestionLeftDrawer() {
                 <div className="text-xs text-green-500 border border-gray-700 px-2 py-1 rounded-full">
                   {question.difficulty}
                 </div>
-              </Link>
+              </button>
             ))}
           </SheetDescription>
         </div>
