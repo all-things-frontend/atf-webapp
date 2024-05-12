@@ -154,3 +154,11 @@ export default function Question() {
     </div>
   );
 }
+
+/**
+ const problem = {
+  title: "Counter",
+  problemText: `<h2>You are tasked with creating a React component called <strong>Counter</strong> that will serve as a counter for the number of problems a user has completed on LeetCode. Your task is to implement the logic for this component.</h2><p>The Co component should have the following features:</p><ol><li><span style="color: var(--tw-prose-bold);">Display Count</span>: It should display the current count of problems completed by the user.</li><li><span style="color: var(--tw-prose-bold);">Increment and Decrement Buttons</span>: The component should include buttons to increment and decrement the count. Clicking the increment button should increase the count by one, and clicking the decrement button should decrease the count by one.</li><li><span style="color: var(--tw-prose-bold);">Minimum Count</span>: The count should not be allowed to go below zero. If the user tries to decrement the count when it's already zero, the count should remain at zero.</li><li><span style="color: var(--tw-prose-bold);">Maximum Count</span>: There is no maximum limit for the count. Users can increment the count indefinitely.</li><li><span style="color: var(--tw-prose-bold);">Styling</span>: Feel free to add basic styling to the component to make it visually appealing.</li></ol>`,
+  difficulty: DIFFICULTY_LEVEL_ENUM.EASY,
+};
+ */
