@@ -103,7 +103,7 @@ export const MOCK_QUESTIONS = [
   },
   {
     id: 8,
-    name: "Counter 8",
+    name: "Hello world",
     description: "Increment and decrement counter",
     difficulty: "Easy",
     estimatedTime: 10, // in mins
@@ -115,7 +115,7 @@ export const MOCK_QUESTIONS = [
   },
   {
     id: 9,
-    name: "Counter 9",
+    name: "Dummy question",
     description: "Increment and decrement counter",
     difficulty: "Easy",
     estimatedTime: 10, // in mins

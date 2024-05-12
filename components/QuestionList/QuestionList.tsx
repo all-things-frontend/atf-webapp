@@ -9,6 +9,7 @@ import { FC, useState } from "react";
 import { CheckedCircle, ChevronRight } from "../icons";
 import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
+import { QuestionType } from "@/app/types";
 
 type QuestionListItemProps = {
   id: number;
@@ -59,13 +60,15 @@ const QuestionListItem: FC<QuestionListItemProps> = ({
   );
 };
 
-interface QuestionListProps {}
+interface QuestionListProps {
+  questions: QuestionType[];
+}
 
-const QuestionList: FC<QuestionListProps> = ({}) => {
+const QuestionList: FC<QuestionListProps> = ({ questions }) => {
   return (
     <div>
       <div className="flex flex-col border border-gray-200 dark:border-gray-800 rounded-lg divide-y divide-gray-200 dark:divide-gray-800">
-        {MOCK_QUESTIONS.map(({ id, name, description, difficulty, slug }) => (
+        {questions.map(({ id, name, description, difficulty, slug }) => (
           <QuestionListItem
             key={id}
             id={id}
