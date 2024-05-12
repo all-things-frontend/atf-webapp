@@ -10,7 +10,7 @@ export default function Home() {
       <Header />
       <section className="flex flex-col items-center">
         <div className="flex justify-center items-center h-[300px]">
-          <p className="text-4xl text-primary font-bold leading-snug text-center overflow-hidden animate-typingAnimate whitespace-nowrap my-0 mx-auto border-transparent border-r-primary border ">
+          <p className="text-4xl text-primary font-bold leading-snug text-center overflow-hidden animate-typingAnimate whitespace-nowrap my-0 mx-auto border-transparent border-r-primary border">
             Master React by practising from a set of handfully curated problems.
           </p>
         </div>

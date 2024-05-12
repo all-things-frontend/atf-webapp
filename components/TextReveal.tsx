@@ -29,7 +29,7 @@ export const TextReveal: React.FC<SentencePropType> = ({ sentence }) => {
     <div className="flex gap-2 flex-wrap">
       {words.map((word, index) => (
         <motion.span
-          className={`text-6xl font-semibold leading-[80px] ${
+          className={`text-6xl font-semibold leading-[80px] tracking-wide ${
             index > wordLengthWithOpacity
               ? "text-[#A3FFD6]/20"
               : "text-[#A3FFD6]"
