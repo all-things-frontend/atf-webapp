@@ -1,0 +1,57 @@
+.menu {
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  z-index: 3;
+  height: calc(100% - 60px);
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    svg {
+      cursor: pointer;
+      width: 100px;
+      height: 100px;
+      path {
+        transition: color 0.5s;
+      }
+
+      &:hover {
+        path {
+          stroke: #d3fd50;
+        }
+      }
+    }
+  }
+  .body {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+
+    a,
+    p {
+      color: white;
+      text-transform: uppercase;
+      font-size: 8vw;
+      line-height: 8.2vw;
+      font-weight: 400;
+      margin: 0px;
+      text-decoration: none;
+    }
+  }
+}
+
+@keyframes slider {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
