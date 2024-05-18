@@ -1,8 +1,11 @@
-import { Header } from "@/components/Header";
-import { PAGE_ROUTES } from "./contants";
-import Link from "next/link";
-import { TextReveal } from "@/components/TextReveal";
-import { TEXT_REVEAL_SENTENCE } from "@/mock-data";
+'use client';
+
+import { Header } from '@/components/Header';
+import { PAGE_ROUTES } from './contants';
+import Link from 'next/link';
+import { TextReveal } from '@/components/TextReveal';
+import { TEXT_REVEAL_SENTENCE } from '@/mock-data';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -23,6 +26,7 @@ export default function Home() {
       <section className="p-96" id="text-reveal">
         <TextReveal sentence={TEXT_REVEAL_SENTENCE} />
       </section>
+      <Footer />
     </div>
   );
 }
