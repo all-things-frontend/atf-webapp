@@ -41,11 +41,20 @@ const config = {
           to: { borderRightColor: 'transparent' },
           '50%': { borderRightColor: '#A3FFD6' },
         },
+        shimmer: {
+          from: {
+            backgroundPosition: '0 0',
+          },
+          to: {
+            backgroundPosition: '-200% 0',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         typingAnimate: `typing 3s steps(30, end), blinkCaret 1s step-end infinite`,
+        shimmer: 'shimmer 2s linear infinite',
       },
     },
   },

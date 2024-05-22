@@ -9,6 +9,8 @@ import Burger from './Burger/Burger';
 import { AnimatePresence } from 'framer-motion';
 import Stairs from './Stairs/Stairs';
 import Menu from './Menu/Menu';
+import { textGradientClass } from '@/app/utils/styleClass';
+import { cn } from '@/lib/utils';
 
 type HeaderPropsType = {};
 
@@ -17,14 +19,14 @@ export const Header: React.FC<HeaderPropsType> = () => {
 
   return (
     <div className="flex w-full justify-between items-center p-4 border-b border-gray-300 dark:border-gray-800 h-20 text-sm">
-      <Link href={PAGE_ROUTES.HOME} className="text-primary font-bold text-lg">
-        ATF
+      <Link href={PAGE_ROUTES.HOME} className="font-bold text-lg">
+        <span className={cn(textGradientClass)}>RC</span>
       </Link>
       <div className="flex gap-6 items-center">
         <Link href={PAGE_ROUTES.DASHBOARD}>Dashboard</Link>
         <ModeToggle />
         <UserMenu />
-        <Burger
+        {/* <Burger
           openMenu={() => {
             setMenuIsOpen(true);
           }}
@@ -40,7 +42,7 @@ export const Header: React.FC<HeaderPropsType> = () => {
               />
             </>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
       </div>
     </div>
   );
